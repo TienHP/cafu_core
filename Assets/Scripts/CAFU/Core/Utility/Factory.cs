@@ -1,6 +1,5 @@
-﻿// ReSharper disable UnusedMember.Global
-
-using UnityEngine;
+﻿using UnityEngine;
+// ReSharper disable UnusedMember.Global
 // ReSharper disable VirtualMemberNeverOverridden.Global
 
 namespace CAFU.Core.Utility {
@@ -9,13 +8,11 @@ namespace CAFU.Core.Utility {
 
     }
 
-    public interface IFactory {
+    public interface IFactory : global::Zenject.IFactory {
 
     }
 
-    public interface IFactory<out TTarget> : IFactory {
-
-        TTarget Create();
+    public interface IFactory<out TTarget> : IFactory, global::Zenject.IFactory<TTarget> {
 
     }
 
